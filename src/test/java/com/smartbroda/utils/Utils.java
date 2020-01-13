@@ -1,8 +1,15 @@
 package com.smartbroda.utils;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.io.File;
+import java.io.IOException;
+
+import static org.openqa.selenium.io.FileHandler.copy;
 
 public class Utils {
     private static final String URL = System.getProperty("url",
@@ -29,6 +36,18 @@ public class Utils {
 
             default:
                 return new ChromeDriver(options);
+        }
+    }
+
+    public static void captureScreenshot(WebDriver driver, String fileName) {
+// Take the screenshot with your `driver`
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs
+                (OutputType.FILE);
+// Copy file to `screenshots` using the file name we pass through.
+        try {
+            copy(scrFile, new File("screenshots/" + fileName));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
