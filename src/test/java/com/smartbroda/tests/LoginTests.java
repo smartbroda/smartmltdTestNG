@@ -13,7 +13,7 @@ public class LoginTests extends BaseTest {
         driver.get(Utils.getUrl());
 // Step 1 EXPECTED RESULT: check we're on the Login Page
         Assert.assertEquals(loginPage.getPageTitle(), "Login Page" , "The Login Page" +
-                "didn't open, or the title text has changed");
+                " didn't open, or the title text has changed");
 // Step 2 ACTION: Enter Username and Password
         loginPage.enterUsername("tester");
         loginPage.enterPassword("letmein");
