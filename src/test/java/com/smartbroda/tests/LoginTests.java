@@ -28,9 +28,6 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(toolsPage.getPageTitle(), "Login Page", "The Login Page" +
                 "didn't open, or the title text has changed");
         Utils.captureScreenshot(driver, "loggedIn.png");
-        Utils.captureScreenshot(driver, "loggedIn2.png");
-        Utils.captureScreenshot(driver, "loggedIn3.png");
-//        Screenshots.captureScreenshot(driver, "loginPage" + Screenshots.generateScreenShotFileName());
     }
 
 
